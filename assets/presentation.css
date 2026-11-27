@@ -1,0 +1,9 @@
+/* Leadstart Translate — handle for the per-language rules added inline.
+
+   WordPress needs a registered stylesheet before wp_add_inline_style() will
+   print anything, so this file exists to be that handle. The rules it carries
+   are generated per language and added at runtime. */
+
+body.leadst-translated {
+	font-synthesis: none;
+}

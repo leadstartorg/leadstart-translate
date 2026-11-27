@@ -1,0 +1,248 @@
+/* Leadstart Translate — admin screens. */
+
+/* Readable, responsive language selection; no narrow flex-wrap columns. */
+.leadst-language-controls {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin: 12px 0 6px;
+}
+.leadst-language-controls > label:first-child { font-weight: 600; }
+.leadst-language-controls input[type="search"] { min-width: min(100%, 260px); max-width: 340px; }
+.leadst-selected-only { display: inline-flex; align-items: center; gap: 6px; }
+.leadst-language-grid, .wptr-language-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 218px), 1fr));
+	gap: 9px;
+	max-height: 430px;
+	overflow-y: auto;
+	padding: 14px;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	background: #f6f7f7;
+	box-sizing: border-box;
+}
+.leadst-language, .wptr-language {
+	display: grid;
+	grid-template-columns: 18px minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 8px;
+	min-height: 42px;
+	box-sizing: border-box;
+	padding: 7px 9px;
+	border: 1px solid #dcdcde;
+	border-radius: 5px;
+	background: #fff;
+	line-height: 1.35;
+	cursor: pointer;
+}
+.leadst-language:hover, .wptr-language:hover { background: #f0f6fc; border-color: #8c8f94; }
+.leadst-language:focus-within, .wptr-language:focus-within { outline: 2px solid #2271b1; outline-offset: 1px; }
+.leadst-language:has(input:checked), .wptr-language:has(input:checked) { border-color: #9ec5df; background: #f6fbff; }
+.leadst-language input[type="checkbox"], .wptr-language input[type="checkbox"] {
+	margin: 0;
+	justify-self: center;
+	align-self: center;
+}
+.leadst-language__name, .wptr-language__name {
+	min-width: 0;
+	font-weight: 500;
+	overflow-wrap: anywhere;
+}
+.leadst-language__code, .wptr-language__code {
+	justify-self: end;
+	white-space: nowrap;
+	border-radius: 3px;
+	padding: 3px 5px;
+	background: #f0f0f1;
+	color: #50575e;
+	font-size: 11px;
+	font-family: Consolas, Monaco, monospace;
+	line-height: 1.25;
+}
+.leadst-language[hidden], .wptr-language[hidden], .leadst-language-no-results[hidden] { display: none !important; }
+.leadst-language-no-results { margin: 8px 0; color: #646970; }
+
+.leadst-language--clash .leadst-language__name {
+	color: #2271b1;
+}
+
+.leadst-language__clash {
+	color: #b32d2e;
+	font-weight: 700;
+	cursor: help;
+}
+
+.leadst-bulk {
+	margin: 8px 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.leadst-count {
+	color: #646970;
+}
+
+.leadst-estimate {
+	display: block;
+	margin: 6px 0 0;
+	padding: 8px 10px;
+	border-left: 4px solid #c3c4c7;
+	background: #f6f7f7;
+	line-height: 1.5;
+}
+
+.leadst-estimate:empty {
+	display: none;
+}
+
+.leadst-estimate.is-free {
+	border-left-color: #00a32a;
+}
+
+.leadst-estimate.is-steep {
+	border-left-color: #d63638;
+	background: #fcf0f1;
+	font-weight: 600;
+}
+
+.leadst-filters {
+	margin: 10px 0;
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.leadst-tools {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 10px 0 24px;
+}
+
+.leadst-tools form {
+	margin: 0;
+}
+
+.leadst-table {
+	margin: 10px 0 24px;
+}
+
+.leadst-table th {
+	width: 18em;
+}
+
+.leadst-muted {
+	color: #646970;
+	font-size: 12px;
+}
+
+.leadst-source {
+	display: block;
+	color: #646970;
+	margin-bottom: 4px;
+}
+
+.leadst-progress {
+	height: 18px;
+	border-radius: 9px;
+	background: #e0e0e0;
+	overflow: hidden;
+	max-width: 420px;
+}
+
+.leadst-progress__bar {
+	height: 100%;
+	background: #2271b1;
+	transition: width 0.3s ease;
+}
+
+.leadst-warn {
+	color: #2271b1;
+}
+
+.leadst-danger {
+	color: #b32d2e;
+}
+
+@media screen and (max-width: 782px) {
+	.leadst-language-grid, .wptr-language-grid {
+		max-height: min(65vh, 480px);
+	}
+
+	.leadst-table th {
+		width: auto;
+	}
+}
+
+.leadst-diagnose-form {
+	margin: 12px 0 16px;
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.leadst-diagnose {
+	max-width: 900px;
+}
+
+.leadst-diagnose td:first-child {
+	width: 260px;
+	font-weight: 600;
+}
+
+.leadst-compare td {
+	vertical-align: top;
+	max-width: 22em;
+	word-wrap: break-word;
+}
+
+.leadst-compare--same td {
+	color: #646970;
+}
+
+.leadst-compare--differs td:first-child {
+	border-left: 3px solid #2271b1;
+	font-weight: 600;
+}
+
+.leadst-compare-estimate form {
+	margin: 0 0 12px;
+}
+
+@media screen and (max-width: 480px) {
+	.leadst-language-grid, .wptr-language-grid { grid-template-columns: minmax(0, 1fr); padding: 8px; }
+	.leadst-language, .wptr-language { min-height: 46px; }
+	.leadst-language-controls input[type="search"] { width: 100%; }
+}
+
+/* Credential fields: show configured state, never expose saved secrets to HTML. */
+.leadst-secret-field {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin-bottom: 7px;
+}
+.leadst-secret-field .leadst-secret-input {
+	min-width: min(100%, 290px);
+	max-width: 100%;
+}
+.leadst-secret-toggle { white-space: nowrap; }
+.leadst-secret-status { display: inline-flex; align-items: center; gap: 6px; color: #646970; }
+.leadst-secret-status.is-configured { color: #216e39; font-weight: 600; }
+.leadst-secret-status.is-configured::before {
+	content: '';
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background-color: #00a32a;
+}
+@media (max-width: 782px) {
+	.leadst-secret-field .leadst-secret-input { width: 100%; }
+}
